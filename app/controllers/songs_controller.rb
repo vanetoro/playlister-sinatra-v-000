@@ -47,7 +47,7 @@ class SongsController < ApplicationController
     @song.artist = Artist.find_or_create_by(name: params[:artist_name])
     @song.genres.clear
       if !params[:genre].empty?
-        params[:genre].each do |genre|
+        # params[:genre].each do |genre|
         @song.genres << Genre.find_by(name: genre)
       end
     @song.save
