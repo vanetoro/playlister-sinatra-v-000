@@ -48,6 +48,7 @@ class SongsController < ApplicationController
     @song.genres.clear
       if !params[:genre].empty?
         # params[:genre].each do |genre|
+        binding.pry
         @song.genres << Genre.find_by(name: genre)
       end
     @song.save
