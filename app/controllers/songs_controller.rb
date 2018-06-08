@@ -46,10 +46,10 @@ class SongsController < ApplicationController
     @song = Song.find_by(name: params[:name])
     @song.artist = Artist.find_or_create_by(name: params[:artist_name])
     @song.genres.clear
-    binding.pry
-      # if !params[:genre].empty?
-      #   @song.genres << params[:genre]
-      # end
+      if !params[:genre].empty?
+        params[:genre].each do |genre|
+        @song.genres << Genre.find_by(name: genre)
+      end
     @song.save
 
     flash[:message] = 'Successfully updated song.'
