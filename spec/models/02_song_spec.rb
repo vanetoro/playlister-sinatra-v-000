@@ -40,4 +40,4 @@ describe "Song" do
       expect((Song.find_by_slug(slug)).name).to eq("Blank Space")
     end
   end
-end
+
