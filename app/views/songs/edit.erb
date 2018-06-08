@@ -7,6 +7,7 @@
 
   <%@genres.each do |g| %>
   <%genre = Genre.find(g.id)%>
+    <%end%>
   <input type="checkbox" id='<%=genre.name%>' value="genre" <%= 'checked' if @song.genres.include?(genre.name) %>>
   <%end%>
   <input type="submit" value="Save">
